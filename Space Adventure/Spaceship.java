@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spaceship extends SmoothMover
 {
-    GreenfootImage imageRight = new GreenfootImage("spaceship.png");
     int speed = 5;
     /**
      * Act - do whatever the Spaceship wants to do. This method is called whenever
