@@ -12,30 +12,31 @@ public class Spaceship extends Actor
     GreenfootImage imageDown = new GreenfootImage("spaceship_down.png");
     GreenfootImage imageLeft = new GreenfootImage("spaceship_left.png");
     GreenfootImage imageRight = new GreenfootImage("spaceship_right.png");
+    int speed = 5;
     /**
      * Act - do whatever the Spaceship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       if (Greenfoot.isKeyDown("up"))
+       if (Greenfoot.isKeyDown("w"))
        {
-           setLocation(getX(),getY()-1);
+           setLocation(getX(),getY()-speed);
            setImage(imageUp);
        }
-       if (Greenfoot.isKeyDown("down"))
+       if (Greenfoot.isKeyDown("s"))
        {
-           setLocation(getX(),getY()+1);
+           setLocation(getX(),getY()+speed);
            setImage(imageDown);
        }
-       if (Greenfoot.isKeyDown("left"))
+       if (Greenfoot.isKeyDown("a"))
        {
-           setLocation(getX()-1,getY());
+           setLocation(getX()-speed,getY());
            setImage(imageLeft);
        }
-       if (Greenfoot.isKeyDown("right"))
+       if (Greenfoot.isKeyDown("d"))
        {
-           setLocation(getX()+1,getY());
+           setLocation(getX()+speed,getY());
            setImage(imageRight);
        }
     }   
