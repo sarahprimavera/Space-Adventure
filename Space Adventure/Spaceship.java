@@ -6,12 +6,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Spaceship extends Actor
+public class Spaceship extends SmoothMover
 {
-    GreenfootImage imageUp = new GreenfootImage("spaceship_up.png");
-    GreenfootImage imageDown = new GreenfootImage("spaceship_down.png");
-    GreenfootImage imageLeft = new GreenfootImage("spaceship_left.png");
-    GreenfootImage imageRight = new GreenfootImage("spaceship_right.png");
+    GreenfootImage imageRight = new GreenfootImage("spaceship.png");
     int speed = 5;
     /**
      * Act - do whatever the Spaceship wants to do. This method is called whenever
@@ -21,23 +18,33 @@ public class Spaceship extends Actor
     {
        if (Greenfoot.isKeyDown("w"))
        {
-           setLocation(getX(),getY()-speed);
-           setImage(imageUp);
+           setRotation(-90);
+           move(speed);
        }
        if (Greenfoot.isKeyDown("s"))
        {
-           setLocation(getX(),getY()+speed);
-           setImage(imageDown);
+           setRotation(90);
+           move(speed);
        }
        if (Greenfoot.isKeyDown("a"))
        {
-           setLocation(getX()-speed,getY());
-           setImage(imageLeft);
+           setRotation(-180);
+           move(speed);
        }
        if (Greenfoot.isKeyDown("d"))
        {
-           setLocation(getX()+speed,getY());
-           setImage(imageRight);
+           setRotation(0);
+           move(speed);
        }
-    }   
+       if (Greenfoot.isKeyDown("space"))
+       {
+           shoot();
+       }
+    }  
+    /*
+     * create new bullet with the spaceships direction
+     */
+    private void shoot() {
+        getWorld().addObject(new Bullet(getRotation()), getX(), getY());
+    }
 }
