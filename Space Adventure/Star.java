@@ -6,14 +6,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Star extends Actor
+public class Star extends SmoothMover
 {
     /**
      * Act - do whatever the Star wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int speed = 10;
+    public Star(int rotation) {
+        setRotation(rotation);
+    }
     public void act() 
     {
-        // Add your action code here.
+        move(speed);
+        removeIfAtEdge();
     }    
 }
