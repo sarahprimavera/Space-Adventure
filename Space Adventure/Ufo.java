@@ -6,11 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Ufo extends Actor
+public class Ufo extends SmoothMover
 {
     GreenfootImage image1 = new GreenfootImage("ufo1.png");
     GreenfootImage image2 = new GreenfootImage("ufo2.png");
-    int i = 0;
+    private int i = 0;
+    private int speed = 3;
     /**
      * Act - do whatever the Ufo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,6 +20,7 @@ public class Ufo extends Actor
     {
         // Add your action code here.
         animate();
+        move(speed);
     } 
     // this function will animate the ufo
     private void animate() {
