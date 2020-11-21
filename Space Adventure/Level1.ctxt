@@ -13,6 +13,4 @@ comment3.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\
 comment4.params=count
 comment4.target=void\ addStars(int)
 comment4.text=\r\n\ Draw\ a\ nmuber\ of\ stars\ for\ the\ background\r\n\ Inspired\ by\ the\ asteroids\ example\r\n
-comment5.params=
-comment5.target=void\ nextLevel()
-numComments=6
+numComments=5

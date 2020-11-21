@@ -70,8 +70,4 @@ public class Level1 extends World
             background.fillOval(x, y, 2, 2);
         }
     }
-    public void nextLevel(){
-        Level2 level2 = new Level2();
-        Greenfoot.setWorld(level2);
-    }
 }
