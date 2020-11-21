@@ -20,21 +20,5 @@ public class Bullet extends SmoothMover
     {
         move(speed);
         removeIfAtEdge();
-    }   
-    /*
-     * Check if the bullet is at a border, if so remove from the world
-     */
-    private void removeIfAtEdge() {
-        // if at left border
-        if (getX() < 0 + getImage().getWidth()/2)
-            getWorld().removeObject(this);
-        // right border
-        else if (getX() > getWorld().getWidth() - getImage().getWidth()/2)
-            getWorld().removeObject(this);
-        // top border
-        else if (getY() < 0 + getImage().getWidth()/2)
-            getWorld().removeObject(this);
-        else if (getY() > getWorld().getHeight() - getImage().getWidth()/2)
-            getWorld().removeObject(this);
     }
 }
