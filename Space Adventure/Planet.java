@@ -12,8 +12,8 @@ public abstract class Planet extends SmoothMover
         // if reached left
         if (getX() == 0) {
             // show the next level
-            MyWorld world = (MyWorld) getWorld();
-            world.nextLevel();
+            Level1 level1 = (Level1) getWorld();
+            level1.nextLevel();
             // remove this planet
             getWorld().removeObject(this);
         }
