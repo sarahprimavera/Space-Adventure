@@ -74,4 +74,20 @@ public abstract class SmoothMover extends Actor
     {
         return exactY;
     }
+    /*
+     * Remove the object if is at a border
+     */
+    public void removeIfAtEdge() {
+        // if at left border
+        if (getX() < 0 + getImage().getWidth()/2)
+            getWorld().removeObject(this);
+        // right border
+        else if (getX() > getWorld().getWidth() - getImage().getWidth()/2)
+            getWorld().removeObject(this);
+        // top border
+        else if (getY() < 0 + getImage().getWidth()/2)
+            getWorld().removeObject(this);
+        else if (getY() > getWorld().getHeight() - getImage().getWidth()/2)
+            getWorld().removeObject(this);
+    }
 }
