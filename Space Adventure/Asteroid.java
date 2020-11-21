@@ -12,9 +12,10 @@ public class Asteroid extends SmoothMover
      * Act - do whatever the Asteroid wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int speed = 7;
-    public Asteroid(int rotation) {
+    private int speed = 2;
+    public Asteroid(int rotation,int startSpeed) {
         setRotation(rotation);
+        speed=startSpeed;
     }
     public void act() 
     {

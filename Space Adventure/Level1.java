@@ -20,11 +20,29 @@ public class Level1 extends World
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
         background.fill();
-        addStars(350);
+        addStars(400);
         
         prepare();
     }
-
+    /**
+     * using act to add asteroids
+     */
+    public void act(){
+        if (Greenfoot.getRandomNumber(100)<25){
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+45,1),Greenfoot.getRandomNumber(800),31);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+135,1),769, Greenfoot.getRandomNumber(600));
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+225,1),Greenfoot.getRandomNumber(800),569);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+315,1),31,Greenfoot.getRandomNumber(600));
+            }
+        }
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -38,7 +56,6 @@ public class Level1 extends World
         Earth earth = new Earth();
         addObject(earth, getWidth(), earth.getImage().getHeight()/2);
     }
-    
     /**
      * Draw a nmuber of stars for the background
      * Inspired by the asteroids example
@@ -48,7 +65,8 @@ public class Level1 extends World
         for (int i = 0; i < count; i++){
             int x = Greenfoot.getRandomNumber(getWidth());
             int y = Greenfoot.getRandomNumber(getHeight());
-            background.setColor(Color.WHITE);
+            int color = 150 - Greenfoot.getRandomNumber(50);
+            background.setColor(new Color(color,color,color));
             background.fillOval(x, y, 2, 2);
         }
     }

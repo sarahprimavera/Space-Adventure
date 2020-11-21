@@ -21,7 +21,26 @@ public class Level3 extends World
         background.setColor(Color.BLACK);
         background.fill();
         prepare();
-        setStars();
+        setStars(400);
+    }
+    /**
+     * using act to add asteroids
+     */
+    public void act(){
+        if (Greenfoot.getRandomNumber(100)<25){
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+45,3),Greenfoot.getRandomNumber(800),31);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+135,3),769, Greenfoot.getRandomNumber(600));
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+225,3),Greenfoot.getRandomNumber(800),569);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Asteroid(Greenfoot.getRandomNumber(90)+315,3),31,Greenfoot.getRandomNumber(600));
+            }
+        }
     }
     private void prepare() {
         
@@ -31,7 +50,18 @@ public class Level3 extends World
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, getWidth()/2, getHeight()/2);
     }
-    private void setStars() {
-        // do the background 
+    /**
+     * adding stars to the background
+     * inspired by asteroid example
+     */
+    private void setStars(int count) {
+        GreenfootImage background = getBackground();
+        for (int i = 0; i < count; i++){
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            int color = 150 - Greenfoot.getRandomNumber(50);
+            background.setColor(new Color(color,color,color));
+            background.fillOval(x, y, 2, 2);
+        }
     }
 }
