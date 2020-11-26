@@ -9,13 +9,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Spaceship extends SmoothMover
 {
     int speed = 5;
+    int reloadSpeed = 10;
+    int reloadCount = reloadSpeed;
     /**
      * Act - do whatever the Spaceship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-       if (Greenfoot.isKeyDown("w"))
+       listenKeyboard();
+       reloadCount++;
+    }  
+    /*
+     * Move the spaceship by looking at which keys are pressed
+     */
+    private void listenKeyboard() {
+        if (Greenfoot.isKeyDown("w"))
        {
            setRotation(-90);
            move(speed);
@@ -39,11 +48,14 @@ public class Spaceship extends SmoothMover
        {
            shoot();
        }
-    }  
+    }
     /*
      * create new bullet with the spaceships direction
      */
     private void shoot() {
-        getWorld().addObject(new Bullet(getRotation()), getX(), getY());
+        if (reloadCount >= reloadSpeed) {
+            getWorld().addObject(new Bullet(getRotation()), getX(), getY());
+            reloadCount = 0;
+        }
     }
 }
