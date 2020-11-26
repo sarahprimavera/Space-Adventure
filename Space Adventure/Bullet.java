@@ -31,6 +31,7 @@ public class Bullet extends SmoothMover
         if (asteroid != null) {
             getWorld().removeObject(asteroid);
             getWorld().removeObject(this);
+            // add points
         }
     }
 }
