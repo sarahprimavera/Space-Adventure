@@ -17,18 +17,5 @@ public class Earth extends Planet
     {
         move(speed);
         checkIfNextLevel();
-    }  
-    /*
-     * checks if the level ended. If this object is at the border
-     
-    private void checkIfNextLevel() {
-        // if reached left
-        if (getX() == 0) {
-            // show the next level
-            MyWorld world = (MyWorld) getWorld();
-            world.nextLevel();
-            // remove this planet
-            getWorld().removeObject(this);
-        }
-    }*/
+    }
 }
