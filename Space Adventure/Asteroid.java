@@ -21,5 +21,5 @@ public class Asteroid extends SmoothMover
     {
         move(speed);
         removeIfAtEdge();
-    }    
+    }
 }
