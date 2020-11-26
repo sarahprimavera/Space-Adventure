@@ -24,7 +24,7 @@ public class Level2 extends World
         prepare();
     }
     /**
-     * using act to add asteroids
+     * using act to add asteroids and ufo's
      */
     public void act(){
         if (Greenfoot.getRandomNumber(100)<25){
@@ -39,6 +39,20 @@ public class Level2 extends World
             }
             if (Greenfoot.getRandomNumber(100)<2){
                 addObject(new Asteroid(Greenfoot.getRandomNumber(90)+315,2),31,Greenfoot.getRandomNumber(600));
+            }
+        }
+        if (Greenfoot.getRandomNumber(100)<10){
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),Greenfoot.getRandomNumber(800),31);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),769, Greenfoot.getRandomNumber(600));
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),Greenfoot.getRandomNumber(800),569);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),31,Greenfoot.getRandomNumber(600));
             }
         }
     }
