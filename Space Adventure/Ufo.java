@@ -12,6 +12,7 @@ public class Ufo extends SmoothMover
     GreenfootImage image2 = new GreenfootImage("ufo2.png");
     private int i = 0;
     private int speed = 3;
+    private boolean shouldMoveRight = true;
     /**
      * Act - do whatever the Ufo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,7 +21,16 @@ public class Ufo extends SmoothMover
     {
         // Add your action code here.
         animate();
-        move(speed);
+        if (shouldMoveRight) {
+            move(speed);
+            if (getX() > 550)
+                shouldMoveRight = false;
+        }
+        else {
+            move(-speed);
+            if (getX() < 50)
+                shouldMoveRight = true;
+        }
     } 
     // this function will animate the ufo
     private void animate() {
