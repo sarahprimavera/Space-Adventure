@@ -24,9 +24,10 @@ public class Level3 extends World
         setStars(400);
     }
     /**
-     * using act to add asteroids
+     * using act to add asteroids, Ufo's and stars
      */
     public void act(){
+        // spawn asteroid
         if (Greenfoot.getRandomNumber(100)<25){
             if (Greenfoot.getRandomNumber(100)<2){
                 addObject(new Asteroid(Greenfoot.getRandomNumber(90)+45,3),Greenfoot.getRandomNumber(800),31);
@@ -39,6 +40,36 @@ public class Level3 extends World
             }
             if (Greenfoot.getRandomNumber(100)<2){
                 addObject(new Asteroid(Greenfoot.getRandomNumber(90)+315,3),31,Greenfoot.getRandomNumber(600));
+            }
+        }
+        // spawn Ufo's
+        if (Greenfoot.getRandomNumber(100)<10){
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),Greenfoot.getRandomNumber(800),31);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),769, Greenfoot.getRandomNumber(600));
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),Greenfoot.getRandomNumber(800),569);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Ufo(),31,Greenfoot.getRandomNumber(600));
+            }
+        }
+        // spawn Stars
+        if (Greenfoot.getRandomNumber(100)<7){
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Star(Greenfoot.getRandomNumber(90)+45),Greenfoot.getRandomNumber(800),31);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Star(Greenfoot.getRandomNumber(90)+135),769, Greenfoot.getRandomNumber(600));
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+               addObject(new Star(Greenfoot.getRandomNumber(90)+225),Greenfoot.getRandomNumber(800),569);
+            }
+            if (Greenfoot.getRandomNumber(100)<2){
+                addObject(new Star(Greenfoot.getRandomNumber(90)+315),31,Greenfoot.getRandomNumber(600));
             }
         }
     }
