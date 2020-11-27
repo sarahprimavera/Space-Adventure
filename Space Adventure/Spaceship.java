@@ -23,6 +23,7 @@ public class Spaceship extends SmoothMover
        checkIfTouchingAsteroid();
        checkIfTouchingStar();
        checkIfTouchingUfo();
+       checkIfTouchingEnemyBullet();
        // if the timer has passed 5 seconds, stop the powerup
        if (timer.millisElapsed() > 5000) {
            reloadTime = 10;
@@ -74,7 +75,7 @@ public class Spaceship extends SmoothMover
     private void checkIfTouchingAsteroid() {
         Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
         if (asteroid != null) {
-            // lose points
+            // replace this with removing points
             Greenfoot.stop();
         }
     }
@@ -100,7 +101,17 @@ public class Spaceship extends SmoothMover
     private void checkIfTouchingUfo() {
         Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
         if (ufo != null) {
-            // lose points
+            // replace this with removing points
+            Greenfoot.stop();
+        }
+    }
+    /*
+     * If touched by enemy bullet, reduce points
+     */
+    private void checkIfTouchingEnemyBullet() {
+        EnemyBullet eBullet = (EnemyBullet) getOneIntersectingObject(EnemyBullet.class);
+        if (eBullet != null) {
+            // replace this with removing points
             Greenfoot.stop();
         }
     }
