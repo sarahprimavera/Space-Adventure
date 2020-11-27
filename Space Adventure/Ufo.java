@@ -13,14 +13,34 @@ public class Ufo extends SmoothMover
     private int i = 0;
     private int speed = 3;
     private boolean shouldMoveRight = true;
+    int reloadTime = 10;
+    int reloadCount = reloadTime;
     /**
      * Act - do whatever the Ufo wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        // Add your action code here.
         animate();
+        moveAround();
+        shoot();
+    } 
+    /*
+     * this function will animate the ufo
+     */ 
+    private void animate() {
+        if (i == 30)
+            setImage(image2);
+        else if (i == 60) {
+            setImage(image1);
+            i = 0;
+        }
+        i++;
+    }
+    /*
+     * This function moves the ufo from left to right
+     */
+    private void moveAround() {
         if (shouldMoveRight) {
             move(speed);
             if (getX() > 550)
@@ -31,15 +51,22 @@ public class Ufo extends SmoothMover
             if (getX() < 50)
                 shouldMoveRight = true;
         }
-    } 
-    // this function will animate the ufo
-    private void animate() {
-        if (i == 30)
-            setImage(image2);
-        else if (i == 60) {
-            setImage(image1);
-            i = 0;
+    }
+    /*
+     * This function shoots towards the spaceship
+     */
+    private void shoot() {
+        if (reloadCount >= reloadTime) {
+            // get the spaceship location
+            Spaceship player = getWorld().getObjects(Spaceship.class).get(0);
+            int playerX = player.getX();
+            int playerY = player.getY();
+            // add bullet and go towards the spaceship
+            EnemyBullet b = new EnemyBullet();
+            getWorld().addObject(b, getX(), getY());
+            b.turnTowards(playerX, playerY);
+            // reset the reload
+            reloadCount = 0;
         }
-        i++;
     }
 }
