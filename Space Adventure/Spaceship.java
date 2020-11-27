@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Spaceship extends SmoothMover
 {
     int speed = 5;
-    int reloadSpeed = 10;
-    int reloadCount = reloadSpeed;
+    int reloadTime = 10;
+    int reloadCount = reloadTime;
     boolean poweredUp = false;
     SimpleTimer timer = new SimpleTimer();
     /**
@@ -20,14 +20,16 @@ public class Spaceship extends SmoothMover
     public void act() 
     {
        listenKeyboard();
-       reloadCount++;
-       if (timer.millisElapsed() > 5000) {
-           reloadSpeed = 10;
-           poweredUp = false;
-       }
        checkIfTouchingAsteroid();
        checkIfTouchingStar();
-    }  
+       checkIfTouchingUfo();
+       // if the timer has passed 5 seconds, stop the powerup
+       if (timer.millisElapsed() > 5000) {
+           reloadTime = 10;
+           poweredUp = false;
+       }
+       reloadCount++;
+    }
     /*
      * Move the spaceship by looking at which keys are pressed
      */
@@ -61,7 +63,7 @@ public class Spaceship extends SmoothMover
      * create new bullet with the spaceships direction
      */
     private void shoot() {
-        if (reloadCount >= reloadSpeed) {
+        if (reloadCount >= reloadTime) {
             getWorld().addObject(new Bullet(getRotation()), getX(), getY());
             reloadCount = 0;
         }
@@ -85,10 +87,21 @@ public class Spaceship extends SmoothMover
             // remove the star
             getWorld().removeObject(star);
             // set a shorter reload speed
-            reloadSpeed = 5;
+            reloadTime = 5;
             poweredUp = true;
+            // star timer
             timer = new SimpleTimer();
             timer.mark();
+        }
+    }
+    /**
+     * If touched by a Ufo, reduce points
+     */
+    private void checkIfTouchingUfo() {
+        Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
+        if (ufo != null) {
+            // lose points
+            Greenfoot.stop();
         }
     }
 }
