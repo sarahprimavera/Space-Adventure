@@ -20,18 +20,27 @@ public class Bullet extends SmoothMover
     {
         move(speed);
         removeIfAtEdge();
-        if (this.getWorld() != null)
-            removeAsteroid();
+        checkCollisions();
     }
     /**
-     * Checks if its touching an asteroid and removes it
+     * Checks if its touching an asteroid or Ufo and removes it
      */
-    private void removeAsteroid() {
-        Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
-        if (asteroid != null) {
-            getWorld().removeObject(asteroid);
-            getWorld().removeObject(this);
-            // add points
+    private void checkCollisions() {
+        if (this.getWorld() != null) {
+            Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
+            if (asteroid != null) {
+                getWorld().removeObject(asteroid);
+                getWorld().removeObject(this);
+                // add points
+            }
+        }
+        if (this.getWorld() != null) {
+            Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
+            if (ufo != null) {
+                getWorld().removeObject(ufo);
+                getWorld().removeObject(this);
+                // add points
+            }
         }
     }
 }
