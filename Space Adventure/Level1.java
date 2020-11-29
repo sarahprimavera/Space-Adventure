@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
-
+    ScoreBoard scoreboard=new ScoreBoard();
     /**
      * Constructor for objects of class Level1.
      * 
@@ -21,8 +21,8 @@ public class Level1 extends World
         background.setColor(Color.BLACK);
         background.fill();
         addStars(400);
-        
         prepare();
+        showScore();
     }
     /**
      * using act to add asteroids
@@ -42,6 +42,7 @@ public class Level1 extends World
                 addObject(new Asteroid(Greenfoot.getRandomNumber(90)+315,1),31,Greenfoot.getRandomNumber(600));
             }
         }
+        
     }
     /**
      * Prepare the world for the start of the program.
@@ -69,5 +70,8 @@ public class Level1 extends World
             background.setColor(new Color(color,color,color));
             background.fillOval(x, y, 2, 2);
         }
+    }
+    public void showScore(){
+        showText("Score: ",50,575);
     }
 }

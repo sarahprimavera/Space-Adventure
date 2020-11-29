@@ -31,9 +31,9 @@ public class Bullet extends SmoothMover
             if (asteroid != null) {
                 getWorld().removeObject(asteroid);
                 getWorld().removeObject(this);
-                // add points
+               // add points
             }
-        }
+       }
         if (this.getWorld() != null) {
             Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
             if (ufo != null) {
@@ -41,6 +41,6 @@ public class Bullet extends SmoothMover
                 getWorld().removeObject(this);
                 // add points
             }
-        }
+       }
     }
 }
