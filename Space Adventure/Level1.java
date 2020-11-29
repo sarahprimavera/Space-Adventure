@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
-    ScoreBoard scoreboard=new ScoreBoard();
+    int score;
     /**
      * Constructor for objects of class Level1.
      * 
@@ -21,6 +21,7 @@ public class Level1 extends World
         background.setColor(Color.BLACK);
         background.fill();
         addStars(400);
+        score=0;
         prepare();
         showScore();
     }
@@ -71,7 +72,14 @@ public class Level1 extends World
             background.fillOval(x, y, 2, 2);
         }
     }
+    public void addScore(int points){
+        score=score+points;
+        showScore();
+    }
     public void showScore(){
-        showText("Score: ",50,575);
+        showText("Score: "+score,50,575);
+    }
+    public int getScore(){
+        return score;
     }
 }

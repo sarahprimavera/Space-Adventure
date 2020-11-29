@@ -75,8 +75,21 @@ public class Spaceship extends SmoothMover
     private void checkIfTouchingAsteroid() {
         Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
         if (asteroid != null) {
-            // replace this with removing points
-            Greenfoot.stop();
+            if (getWorld() instanceof Level1){
+                    Level1 level1=(Level1)getWorld();
+                    level1.addScore(-10);
+                    getWorld().removeObject(asteroid);
+                }
+            if (getWorld() instanceof Level2){
+                    Level2 level2=(Level2)getWorld();
+                    level2.addScore(-10);
+                    getWorld().removeObject(asteroid);
+            }
+            if (getWorld() instanceof Level3){
+                    Level3 level3=(Level3)getWorld();
+                    level3.addScore(-10);
+                    getWorld().removeObject(asteroid);
+            }
         }
     }
     /**
@@ -101,8 +114,16 @@ public class Spaceship extends SmoothMover
     private void checkIfTouchingUfo() {
         Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
         if (ufo != null) {
-            // replace this with removing points
-            Greenfoot.stop();
+            if (getWorld() instanceof Level2){
+                    Level2 level2=(Level2)getWorld();
+                    level2.addScore(-20);
+                    getWorld().removeObject(ufo);
+            }
+            if (getWorld() instanceof Level3){
+                    Level3 level3=(Level3)getWorld();
+                    level3.addScore(-20);
+                    getWorld().removeObject(ufo);
+            }
         }
     }
     /*
@@ -111,8 +132,16 @@ public class Spaceship extends SmoothMover
     private void checkIfTouchingEnemyBullet() {
         EnemyBullet eBullet = (EnemyBullet) getOneIntersectingObject(EnemyBullet.class);
         if (eBullet != null) {
-            // replace this with removing points
-            Greenfoot.stop();
+            if (getWorld() instanceof Level2){
+                    Level2 level2=(Level2)getWorld();
+                    level2.addScore(-10);
+                    getWorld().removeObject(eBullet);
+            }
+            if (getWorld() instanceof Level3){
+                    Level3 level3=(Level3)getWorld();
+                    level3.addScore(-10);
+                    getWorld().removeObject(eBullet);
+            }
         }
     }
 }

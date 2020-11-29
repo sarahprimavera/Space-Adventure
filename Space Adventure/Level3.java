@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level3 extends World
 {
-
+    int score;
     /**
      * Constructor for objects of class Level3.
      * 
@@ -20,8 +20,10 @@ public class Level3 extends World
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
         background.fill();
+        score=0;
         prepare();
         setStars(400);
+        showScore();
     }
     /**
      * using act to add asteroids, Ufo's and stars
@@ -94,5 +96,15 @@ public class Level3 extends World
             background.setColor(new Color(color,color,color));
             background.fillOval(x, y, 2, 2);
         }
+    }
+    public void addScore(int points){
+        score=score+points;
+        showScore();
+    }
+    public void showScore(){
+        showText("Score: "+score,50,575);
+    }
+    public int getScore(){
+        return score;
     }
 }
