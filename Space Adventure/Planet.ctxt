@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Planet
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Planet\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Planet\ class\ that\ automaticaly\ loads\ next\ level\r\n\ \r\n\ @author\ Hawad\ Ahmad\ and\ Sarah\ Primavera\r\n
 comment1.params=
 comment1.target=void\ checkIfNextLevel()
+comment1.text=\r\n\ Checks\ the\ position\ of\ the\ planet.\ If\ located\ at\ left\ border,\ \r\n\ load\ next\ level\r\n
 numComments=2

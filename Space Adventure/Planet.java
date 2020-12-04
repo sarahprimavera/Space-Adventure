@@ -1,17 +1,21 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Planet here.
+ * Planet class that automaticaly loads next level
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad and Sarah Primavera
  */
 public abstract class Planet extends SmoothMover
 {
-        //private static int level = 1;
+    private boolean gameOver = false;
+    /**
+     * Checks the position of the planet. If located at left border, 
+     * load next level
+     */
     public void checkIfNextLevel() {
         // if reached left
-        if (getX() == 0) {
+        if (getX() == 0 && !gameOver) {
+            gameOver = true;
             if (getWorld() instanceof Level1){
                 Level1 level1=(Level1)getWorld();
                 getWorld().showText("You lose: "+level1.getScore(),400,300);
