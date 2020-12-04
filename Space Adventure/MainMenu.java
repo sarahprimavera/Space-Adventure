@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MainMenu here.
+ * Main menu class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sarah Primavera
  */
 public class MainMenu extends World
 {

@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Level1 here.
+ * Level 1 class
+ * Spawn Asteroids
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad and Sarah Primavera
  */
 public class Level1 extends World
 {
