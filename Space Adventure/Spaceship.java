@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Spaceship here.
+ * Main player class
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad and Sarah Primavera
  */
 public class Spaceship extends SmoothMover
 {
@@ -31,7 +30,7 @@ public class Spaceship extends SmoothMover
        }
        reloadCount++;
     }
-    /*
+    /**
      * Move the spaceship by looking at which keys are pressed
      */
     private void listenKeyboard() {
@@ -60,7 +59,7 @@ public class Spaceship extends SmoothMover
            shoot();
        }
     }
-    /*
+    /**
      * create new bullet with the spaceships direction
      */
     private void shoot() {
@@ -126,7 +125,7 @@ public class Spaceship extends SmoothMover
             }
         }
     }
-    /*
+    /**
      * If touched by enemy bullet, reduce points
      */
     private void checkIfTouchingEnemyBullet() {

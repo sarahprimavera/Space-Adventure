@@ -1,18 +1,17 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Earth here.
+ * Earth planet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad and Sarah Primavera
  */
 public class Earth extends Planet
 {
+    private double speed = -0.5;
     /**
      * Act - do whatever the Earth wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private double speed = -0.5;
     public void act() 
     {
         move(speed);

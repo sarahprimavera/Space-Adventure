@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ice here.
+ * Ice planet
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad and Sarah Primavera
  */
 public class Ice extends Planet
 {

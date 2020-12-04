@@ -1,10 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Ufo here.
+ * Ufo class that shoots projectiles towards player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Hawad Ahmad
  */
 public class Ufo extends SmoothMover
 {
@@ -25,7 +24,7 @@ public class Ufo extends SmoothMover
         moveAround();
         shoot();
     } 
-    /*
+    /**
      * this function will animate the ufo
      */ 
     private void animate() {
@@ -37,7 +36,7 @@ public class Ufo extends SmoothMover
         }
         i++;
     }
-    /*
+    /**
      * This function moves the ufo from left to right
      */
     private void moveAround() {
@@ -57,14 +56,17 @@ public class Ufo extends SmoothMover
      */
     private void shoot() {
         if (reloadCount >= reloadTime) {
-            // get the spaceship location
-            Spaceship player = getWorld().getObjects(Spaceship.class).get(0);
-            int playerX = player.getX();
-            int playerY = player.getY();
-            // add bullet and go towards the spaceship
-            EnemyBullet b = new EnemyBullet();
-            getWorld().addObject(b, getX(), getY());
-            b.turnTowards(playerX, playerY);
+            Spaceship player;
+            for (int i = 0; i < 3; i++) { // shoot 3 times
+                player = getWorld().getObjects(Spaceship.class).get(0);
+                // get the spaceship location
+                int playerX = player.getX();
+                int playerY = player.getY();
+                // add bullet and go towards the spaceship
+                EnemyBullet b = new EnemyBullet();
+                getWorld().addObject(b, getX(), getY());
+                b.turnTowards(playerX+i*5, playerY+i*5);
+            }
             // reset the reload
             reloadCount = 0;
         }
