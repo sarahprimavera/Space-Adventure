@@ -74,8 +74,8 @@ public class Level2 extends World
         for (int i = 0; i < count; i++){
             int x = Greenfoot.getRandomNumber(getWidth());
             int y = Greenfoot.getRandomNumber(getHeight());
-            int color = 150 - Greenfoot.getRandomNumber(50);
-            background.setColor(new Color(color,color,color));
+            int color = 100 + Greenfoot.getRandomNumber(151);
+            background.setColor(new Color(0,color,color));
             background.fillOval(x, y, 2, 2);
         }
     }
