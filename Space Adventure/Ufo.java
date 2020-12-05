@@ -65,7 +65,7 @@ public class Ufo extends SmoothMover
                 // add bullet and go towards the spaceship
                 EnemyBullet b = new EnemyBullet();
                 getWorld().addObject(b, getX(), getY());
-                b.turnTowards(playerX+i*5, playerY+i*5);
+                b.turnTowards(playerX+i*8, playerY+i*8);
             }
             // reset the reload
             reloadCount = 0;
