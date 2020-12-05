@@ -7,11 +7,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Spaceship extends SmoothMover
 {
-    int speed = 5;
-    int reloadTime = 10;
-    int reloadCount = reloadTime;
-    boolean poweredUp = false;
-    SimpleTimer timer = new SimpleTimer();
+    private int speed = 5;
+    private int rotationSpeed = 5;
+    private int reloadTime = 10;
+    private int reloadCount = reloadTime;
+    private boolean poweredUp = false;
+    private SimpleTimer timer = new SimpleTimer();
     /**
      * Act - do whatever the Spaceship wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -36,23 +37,19 @@ public class Spaceship extends SmoothMover
     private void listenKeyboard() {
         if (Greenfoot.isKeyDown("w"))
        {
-           setRotation(-90);
            move(speed);
        }
        if (Greenfoot.isKeyDown("s"))
        {
-           setRotation(90);
            move(speed);
        }
        if (Greenfoot.isKeyDown("a"))
        {
-           setRotation(-180);
-           move(speed);
+           setRotation(getRotation()-rotationSpeed);
        }
        if (Greenfoot.isKeyDown("d"))
        {
-           setRotation(0);
-           move(speed);
+           setRotation(getRotation()+rotationSpeed);
        }
        if (Greenfoot.isKeyDown("space"))
        {
