@@ -54,7 +54,6 @@ public class Spaceship extends SmoothMover
        if (Greenfoot.isKeyDown("space"))
        {
            shoot();
-           Greenfoot.playSound("shoot.wav");
        }
     }
     /**
@@ -62,6 +61,7 @@ public class Spaceship extends SmoothMover
      */
     private void shoot() {
         if (reloadCount >= reloadTime) {
+            Greenfoot.playSound("shoot.wav");
             getWorld().addObject(new Bullet(getRotation()), getX(), getY());
             reloadCount = 0;
         }
