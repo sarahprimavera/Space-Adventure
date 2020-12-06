@@ -54,6 +54,7 @@ public class Spaceship extends SmoothMover
        if (Greenfoot.isKeyDown("space"))
        {
            shoot();
+           Greenfoot.playSound("shoot.wav");
        }
     }
     /**
@@ -74,16 +75,19 @@ public class Spaceship extends SmoothMover
             if (getWorld() instanceof Level1){
                     Level1 level1=(Level1)getWorld();
                     level1.addScore(-10);
+                    Greenfoot.playSound("explosion.wav");
                     getWorld().removeObject(asteroid);
                 }
             if (getWorld() instanceof Level2){
                     Level2 level2=(Level2)getWorld();
                     level2.addScore(-10);
+                    Greenfoot.playSound("explosion.wav");
                     getWorld().removeObject(asteroid);
             }
             if (getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
                     level3.addScore(-10);
+                    Greenfoot.playSound("explosion.wav");
                     getWorld().removeObject(asteroid);
             }
         }
@@ -113,11 +117,13 @@ public class Spaceship extends SmoothMover
             if (getWorld() instanceof Level2){
                     Level2 level2=(Level2)getWorld();
                     level2.addScore(-20);
+                    Greenfoot.playSound("explosion.wav");
                     getWorld().removeObject(ufo);
             }
             if (getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
                     level3.addScore(-20);
+                    Greenfoot.playSound("explosion.wav");
                     getWorld().removeObject(ufo);
             }
         }
@@ -131,11 +137,13 @@ public class Spaceship extends SmoothMover
             if (getWorld() instanceof Level2){
                     Level2 level2=(Level2)getWorld();
                     level2.addScore(-10);
+                    Greenfoot.playSound("hitbybullet.wav");
                     getWorld().removeObject(eBullet);
             }
             if (getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
                     level3.addScore(-10);
+                    Greenfoot.playSound("hitbybullet.wav");
                     getWorld().removeObject(eBullet);
             }
         }

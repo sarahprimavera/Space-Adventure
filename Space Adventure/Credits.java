@@ -45,6 +45,7 @@ public class Credits extends World
         }
         if (Greenfoot.isKeyDown("m")){
             MainMenu mainmenu = new MainMenu();
+            mainmenu.playSound(false);
             Greenfoot.setWorld(mainmenu);
         }
      }

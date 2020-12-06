@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level1 extends World
 {
     int score;
+    boolean gameOver=false;
     /**
      * Constructor for objects of class Level1.
      * 
@@ -45,6 +46,7 @@ public class Level1 extends World
         }
         
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -57,7 +59,15 @@ public class Level1 extends World
         // add earth in top right corner
         Earth earth = new Earth();
         addObject(earth, getWidth(), earth.getImage().getHeight()/2);
+        //music for levels
+        GreenfootSound gfs=new GreenfootSound("levelmusic.wav");
+        gfs.setVolume(30);
+        gfs.playLoop();
+        //background for score so it appears clearly
+        ScoreBackground scoreBackground = new ScoreBackground();
+        addObject(scoreBackground,50,575);
     }
+
     /**
      * Draw a nmuber of stars for the background
      * Inspired by the asteroids example
@@ -73,7 +83,8 @@ public class Level1 extends World
         }
     }
     public void addScore(int points){
-        score=score+points;
+        if (!gameOver)
+            score=score+points;
         showScore();
     }
     public void showScore(){

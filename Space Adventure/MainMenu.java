@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MainMenu extends World
 {
-
+    GreenfootSound gfs=new GreenfootSound("mainmenu.wav");
     /**
      * Main Menu for the game
      * 
@@ -22,6 +22,7 @@ public class MainMenu extends World
         addStars(400);
         menuText();
         prepare();
+        playSound(true);
     }
 
     /**
@@ -47,6 +48,7 @@ public class MainMenu extends World
     public void act(){
         if (Greenfoot.isKeyDown("enter")){
             Level1 level1 = new Level1();
+            gfs.stop();
             Greenfoot.setWorld(level1);
         }
         if (Greenfoot.isKeyDown("i")){
@@ -58,7 +60,14 @@ public class MainMenu extends World
             Greenfoot.setWorld(credits);
         }
     }
-
+    public void playSound(boolean play){
+        if (play==true){
+            gfs.play();
+        }
+        else{
+            gfs.stop();
+        }
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

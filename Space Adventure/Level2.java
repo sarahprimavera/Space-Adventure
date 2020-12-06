@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level2 extends World
 {
     int score;
+    boolean gameOver=false;
     /**
      * Constructor for objects of class Level2.
      * 
@@ -64,6 +65,9 @@ public class Level2 extends World
         // add the spaceship in the middle
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, getWidth()/2, getHeight()/2);
+        //background for score so it appears clearly
+        ScoreBackground scoreBackground = new ScoreBackground();
+        addObject(scoreBackground,50,575);
     }
     /**
      * adding stars to the background
@@ -80,7 +84,8 @@ public class Level2 extends World
         }
     }
     public void addScore(int points){
-        score=score+points;
+        if (!gameOver)
+            score=score+points;
         showScore();
     }
     public void showScore(){
