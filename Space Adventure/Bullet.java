@@ -28,6 +28,7 @@ public class Bullet extends SmoothMover
         if (this.getWorld() != null) {
             Asteroid asteroid = (Asteroid) getOneIntersectingObject(Asteroid.class);
             if (asteroid != null) {
+                showExplosion();
                 if (getWorld() instanceof Level1){
                     Level1 level1=(Level1)getWorld();
                     level1.addScore(10);
@@ -47,6 +48,7 @@ public class Bullet extends SmoothMover
         if (this.getWorld() != null) {
             Ufo ufo = (Ufo) getOneIntersectingObject(Ufo.class);
             if (ufo != null) {
+                showExplosion();
                 if (getWorld() instanceof Level1){
                     Level1 level1=(Level1)getWorld();
                     level1.addScore(30);
@@ -63,5 +65,11 @@ public class Bullet extends SmoothMover
                 getWorld().removeObject(this);
             }
         }
+    }
+    /**
+     * This method will add the explosion actor
+     */
+    private void showExplosion() {
+        getWorld().addObject(new Explosion(), getX(), getY());
     }
 }
