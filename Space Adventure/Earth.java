@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Earth extends Planet
 {
-    private double speed = -0.5;
+    private double speed = -0.2;
     /**
      * Act - do whatever the Earth wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

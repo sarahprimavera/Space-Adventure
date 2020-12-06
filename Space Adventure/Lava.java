@@ -11,7 +11,7 @@ public class Lava extends Planet
      * Act - do whatever the Lava wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private double speed = -0.25;
+    private double speed = -0.16;
     public void act() 
     {
         move(speed);
