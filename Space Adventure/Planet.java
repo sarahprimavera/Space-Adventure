@@ -21,11 +21,13 @@ public abstract class Planet extends SmoothMover
                 getWorld().showText("Press enter to restart level 1",400,350);
                 getWorld().showText("Press m to go back to main menu",400,400);
                 if (Greenfoot.isKeyDown("enter")){
+                    level1.gfs.stop();
                     level1 = new Level1();
                     Greenfoot.setWorld(level1);
                     level1.gameOver=false;
                 }
-                if (Greenfoot.isKeyDown("m")){
+                if (Greenfoot.isKeyDown("m")){ 
+                    level1.gfs.stop();
                     MainMenu mainmenu = new MainMenu();
                     Greenfoot.setWorld(mainmenu);
                     level1.gameOver=false;
@@ -43,6 +45,8 @@ public abstract class Planet extends SmoothMover
                     level2.gameOver=false;
                 }
                 if (Greenfoot.isKeyDown("m")){
+                    Level1 level1=(Level1)getWorld();
+                    level1.gfs.stop();
                     MainMenu mainmenu = new MainMenu();
                     Greenfoot.setWorld(mainmenu);
                     level2.gameOver=false;
@@ -60,6 +64,8 @@ public abstract class Planet extends SmoothMover
                     level3.gameOver=false;
                 }
                 if (Greenfoot.isKeyDown("m")){
+                    Level1 level1=(Level1)getWorld();
+                    level1.gfs.stop();
                     MainMenu mainmenu = new MainMenu();
                     Greenfoot.setWorld(mainmenu);
                     level3.gameOver=false;
@@ -69,14 +75,14 @@ public abstract class Planet extends SmoothMover
         else{
             if (getWorld() instanceof Level1) {
                 Level1 level1=(Level1)getWorld();
-                if (level1.getScore()>=100){
+                if (level1.getScore()>=500){
                     Level2 level2 = new Level2();
                     Greenfoot.setWorld(level2);
                 }
             }
             else if (getWorld() instanceof Level2){
                 Level2 level2=(Level2)getWorld();
-                if (level2.getScore()>=200){
+                if (level2.getScore()>=650){
                     Level3 level3 = new Level3();
                     Greenfoot.setWorld(level3);
                 }
@@ -84,7 +90,7 @@ public abstract class Planet extends SmoothMover
             else{
                 if(getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
-                    if (level3.getScore()>=300){
+                    if (level3.getScore()>=700){
                         getWorld().showText("You win!!",400,300);
                         Greenfoot.stop();
                     }

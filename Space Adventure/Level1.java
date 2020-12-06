@@ -10,6 +10,7 @@ public class Level1 extends World
 {
     int score;
     boolean gameOver=false;
+    GreenfootSound gfs=new GreenfootSound("levelmusic.wav");
     /**
      * Constructor for objects of class Level1.
      * 
@@ -60,7 +61,6 @@ public class Level1 extends World
         Earth earth = new Earth();
         addObject(earth, getWidth(), earth.getImage().getHeight()/2);
         //music for levels
-        GreenfootSound gfs=new GreenfootSound("levelmusic.wav");
         gfs.setVolume(30);
         gfs.playLoop();
         //background for score so it appears clearly

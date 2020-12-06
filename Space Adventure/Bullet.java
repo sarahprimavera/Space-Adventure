@@ -31,14 +31,17 @@ public class Bullet extends SmoothMover
                 showExplosion();
                 if (getWorld() instanceof Level1){
                     Level1 level1=(Level1)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level1.addScore(10);
                 }
                 if (getWorld() instanceof Level2){
                     Level2 level2=(Level2)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level2.addScore(10);
                 }
                 if (getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level3.addScore(10);
                 }
                 getWorld().removeObject(asteroid);
@@ -51,14 +54,17 @@ public class Bullet extends SmoothMover
                 showExplosion();
                 if (getWorld() instanceof Level1){
                     Level1 level1=(Level1)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level1.addScore(30);
                 }
                 if (getWorld() instanceof Level2){
                     Level2 level2=(Level2)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level2.addScore(30);
                 }
                 if (getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
+                    Greenfoot.playSound("explosion2.wav");
                     level3.addScore(30);
                 }
                 getWorld().removeObject(ufo);

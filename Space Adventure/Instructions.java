@@ -50,6 +50,7 @@ public class Instructions extends World
             Greenfoot.setWorld(mainmenu);
         }
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
