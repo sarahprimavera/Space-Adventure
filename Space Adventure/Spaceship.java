@@ -41,7 +41,7 @@ public class Spaceship extends SmoothMover
        }
        if (Greenfoot.isKeyDown("s"))
        {
-           move(speed);
+           move(-speed);
        }
        if (Greenfoot.isKeyDown("a"))
        {
