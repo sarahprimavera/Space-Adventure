@@ -7,11 +7,12 @@ collect enough points to preceed to the next level. There are 3 levels in total.
 
 ## Installation
 Run these lines in the git bash
-> `git clone https://github.com/sarahprimavera/Space-Adventure.git`
-> 
-> `git tag rc-alpha`
-> 
-> `git push --tags`
+
+`git clone https://github.com/sarahprimavera/Space-Adventure.git`
+ 
+`git tag rc-alpha`
+
+`git push --tags`
 
 
 ## Roadmap
