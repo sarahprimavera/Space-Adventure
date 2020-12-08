@@ -6,7 +6,7 @@ You controll a spaceship in space and need to destroy and shoot at the asteroids
 collect enough points to preceed to the next level. There are 3 levels in total.
 
 ## Installation
-Run this in the git bash
+Run these lines in the git bash
 > `git clone https://github.com/sarahprimavera/Space-Adventure.git`
 > 
 > `git tag rc-alpha`
