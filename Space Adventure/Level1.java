@@ -57,12 +57,29 @@ public class Level1 extends World
         // add the spaceship in the middle
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, getWidth()/2, getHeight()/2);
+        
         // add earth in top right corner
         Earth earth = new Earth();
         addObject(earth, getWidth(), earth.getImage().getHeight()/2);
+        
+        // show collected planets
+        EarthImage ei = new EarthImage();
+        ei.getImage().scale(20, 20);
+        ei.getImage().setTransparency(150);
+        IceImage ii = new IceImage();
+        ii.getImage().scale(20, 20);
+        ii.getImage().setTransparency(150);
+        LavaImage li = new LavaImage();
+        li.getImage().scale(20, 20);
+        li.getImage().setTransparency(150);
+        addObject(ei, 120, 575);
+        addObject(ii, 145, 575);
+        addObject(li, 170, 575);
+        
         //music for levels
         gfs.setVolume(30);
         gfs.playLoop();
+        
         //background for score so it appears clearly
         ScoreBackground scoreBackground = new ScoreBackground();
         addObject(scoreBackground,50,575);

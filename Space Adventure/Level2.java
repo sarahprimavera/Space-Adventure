@@ -66,9 +66,24 @@ public class Level2 extends World
     private void prepare() {
         Ice ice = new Ice();
         addObject(ice, 800, ice.getImage().getHeight()/2);
+        
         // add the spaceship in the middle
         Spaceship spaceship = new Spaceship();
         addObject(spaceship, getWidth()/2, getHeight()/2);
+        
+        // show collected planets
+        EarthImage ei = new EarthImage();
+        ei.getImage().scale(20, 20);
+        IceImage ii = new IceImage();
+        ii.getImage().scale(20, 20);
+        ii.getImage().setTransparency(150);
+        LavaImage li = new LavaImage();
+        li.getImage().scale(20, 20);
+        li.getImage().setTransparency(150);
+        addObject(ei, 120, 575);
+        addObject(ii, 145, 575);
+        addObject(li, 170, 575);
+        
         //background for score so it appears clearly
         ScoreBackground scoreBackground = new ScoreBackground();
         addObject(scoreBackground,50,575);

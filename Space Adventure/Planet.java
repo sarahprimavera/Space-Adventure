@@ -91,7 +91,13 @@ public abstract class Planet extends SmoothMover
                 if(getWorld() instanceof Level3){
                     Level3 level3=(Level3)getWorld();
                     if (level3.getScore()>=700){
-                        getWorld().showText("You win!!",400,300);
+                        // show that collected last planet
+                        Lava lavaPlanet = getWorld().getObjects(Lava.class).get(0);
+                        getWorld().removeObject(lavaPlanet);
+                        LavaImage li = level3.getObjects(LavaImage.class).get(0);
+                        li.getImage().setTransparency(200);
+                        // show text
+                        level3.showText("You win!!",400,300);
                         Greenfoot.stop();
                     }
                 }
