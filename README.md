@@ -10,10 +10,7 @@ Run these lines in the git bash
 
 `git clone https://github.com/sarahprimavera/Space-Adventure.git`
  
-`git tag rc-alpha`
-
-`git push --tags`
-
+`git checkout rc-alpha`
 
 ## Roadmap
 - Adding collectable missile launchers that automatically goes towards a ufo
