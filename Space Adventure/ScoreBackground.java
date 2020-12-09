@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class ScoreBackground here.
+ * Used to be a background for the score
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Sarah
+ * @version 1
  */
 public class ScoreBackground extends Actor
 {

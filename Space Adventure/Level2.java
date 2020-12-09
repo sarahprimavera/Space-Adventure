@@ -59,6 +59,10 @@ public class Level2 extends World
             }
         }
     }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
     private void prepare() {
         Ice ice = new Ice();
         addObject(ice, 800, ice.getImage().getHeight()/2);
@@ -83,14 +87,23 @@ public class Level2 extends World
             background.fillOval(x, y, 2, 2);
         }
     }
+    /**
+     * using this method to add or remove score
+     */
     public void addScore(int points){
         if (!gameOver)
             score=score+points;
         showScore();
     }
+    /**
+     * using this method to show the score at the bottom
+     */
     public void showScore(){
         showText("Score: "+score,50,575);
     }
+    /**
+     * getter for score field
+     */
     public int getScore(){
         return score;
     }

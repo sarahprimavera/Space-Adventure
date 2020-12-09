@@ -39,12 +39,16 @@ public class MainMenu extends World
             background.fillOval(x, y, 2, 2);
         }
     }
-
+    /**
+     * adding text to menu
+     */
     private void menuText(){
         Menu menu= new Menu();
         addObject(menu,400,300);
     }
-
+    /**
+     * options to go either to instructions, credits or level 1
+     */
     public void act(){
         if (Greenfoot.isKeyDown("enter")){
             Level1 level1 = new Level1();
@@ -60,6 +64,9 @@ public class MainMenu extends World
             Greenfoot.setWorld(credits);
         }
     }
+    /**
+     * used to play background music
+     */
     public void playSound(boolean play){
         if (play==true){
             gfs.play();

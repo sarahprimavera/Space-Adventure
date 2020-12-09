@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Bullet
-comment0.text=\r\n\ Bullet\ class\ that\ acts\ as\ an\ bullet\ projectile\ for\ player\ (Spaceship)\r\n\ \r\n\ @author\ Hawad\ Ahmad\r\n
+comment0.text=\r\n\ Bullet\ class\ that\ acts\ as\ an\ bullet\ projectile\ for\ player\ (Spaceship)\r\n\ \r\n\ @author\ Hawad\ Ahmad\ and\ Sarah\r\n
 comment1.params=rotation
 comment1.target=Bullet(int)
 comment2.params=

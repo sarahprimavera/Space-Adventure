@@ -2,9 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Instructions here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * World used to show instructions of the game
+ * @author Sarah 
+ * @version 1
  */
 public class Instructions extends World
 {
@@ -39,6 +39,9 @@ public class Instructions extends World
             background.fillOval(x, y, 2, 2);
         }
     }
+    /**
+     * can start game or go back to menu
+     */
     public void act(){
         if (Greenfoot.isKeyDown("enter")){
             Level1 level1 = new Level1();
@@ -54,6 +57,7 @@ public class Instructions extends World
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
+     * adding text for the instruction world
      */
     private void prepare()
     {

@@ -2,16 +2,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class Credits here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *  World used to show credits
+ * @author Sarah
+ * @version 1
  */
 public class Credits extends World
 {
 
     /**
      * Constructor for objects of class Credits.
-     * 
      */
     public Credits()
     {    
@@ -38,6 +37,9 @@ public class Credits extends World
             background.fillOval(x, y, 2, 2);
         }
     }
+    /**
+     * can start game or go back to menu
+     */
     public void act(){
         if (Greenfoot.isKeyDown("enter")){
             Level1 level1 = new Level1();
@@ -52,6 +54,7 @@ public class Credits extends World
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
+     * Adding text to the world
      */
     private void prepare()
     {

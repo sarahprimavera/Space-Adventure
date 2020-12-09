@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Bullet class that acts as an bullet projectile for player (Spaceship)
  * 
- * @author Hawad Ahmad
+ * @author Hawad Ahmad and Sarah
  */
 public class Bullet extends SmoothMover
 {

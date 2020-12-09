@@ -1,15 +1,16 @@
 #BlueJ class context
 comment0.target=Credits
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Credits\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Credits\ here.\r\n\ \ World\ used\ to\ show\ credits\r\n\ @author\ Sarah\r\n\ @version\ 1\r\n
 comment1.params=
 comment1.target=Credits()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Credits.\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Credits.\r\n
 comment2.params=count
 comment2.target=void\ addStars(int)
 comment2.text=\r\n\ adding\ stars\r\n\ inspired\ by\ asteroids\ examples\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ can\ start\ game\ or\ go\ back\ to\ menu\r\n
 comment4.params=
 comment4.target=void\ prepare()
-comment4.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment4.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n\ Adding\ text\ to\ the\ world\r\n
 numComments=5
